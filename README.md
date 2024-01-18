@@ -12,7 +12,7 @@ You can compile  this on Linux, Mac or Windows !
 type your definition fonction
 Choose xmin and xmax
 Optionnally force ymin and ymax
-Click on "Trace" = Graph
-And then, you can backup the grpahic in a picture (jpg format) by using the button
+Click on "Tracer la courbe" 
+And then, you can backup the graphic in a picture (jpg format) by using the button "Enregistrer"
 
 
