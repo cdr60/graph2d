@@ -1,0 +1,291 @@
+object Form1: TForm1
+  Left = 898
+  Height = 794
+  Top = 117
+  Width = 1002
+  Align = alClient
+  AutoSize = True
+  BorderStyle = bsSingle
+  Caption = 'Tracé de courbes y=f(x)'
+  ClientHeight = 794
+  ClientWidth = 1002
+  Color = clWhite
+  DesignTimePPI = 120
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnResize = FormResize
+  Position = poScreenCenter
+  LCLVersion = '2.2.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 34
+    Top = 0
+    Width = 1002
+    Align = alTop
+    ClientHeight = 34
+    ClientWidth = 1002
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 7
+      Height = 27
+      Top = 6
+      Width = 69
+      Align = alLeft
+      AutoSize = False
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 5
+      Caption = 'y=f(x)='
+      ParentColor = False
+    end
+    object Editf: TEdit
+      Left = 82
+      Height = 32
+      Top = 1
+      Width = 506
+      Align = alLeft
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
+      TabOrder = 0
+      Text = 'x'
+    end
+    object Label6: TLabel
+      Left = 594
+      Height = 27
+      Top = 6
+      Width = 69
+      Align = alLeft
+      AutoSize = False
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 5
+      Caption = 'Pas'
+      ParentColor = False
+    end
+    object EditPas: TEdit
+      Left = 669
+      Height = 32
+      Hint = 'Nombre d''itérations entre Xmin et Xmax'
+      Top = 1
+      Width = 125
+      Align = alLeft
+      AutoSize = False
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      Text = '10'
+    end
+  end
+  object Panelchart: TPanel
+    Left = 0
+    Height = 692
+    Top = 102
+    Width = 1002
+    Align = alClient
+    ClientHeight = 692
+    ClientWidth = 1002
+    TabOrder = 1
+    object Chart1: TChart
+      Left = 1
+      Height = 690
+      Top = 1
+      Width = 1000
+      AxisList = <      
+        item
+          Marks.LabelBrush.Style = bsClear
+          Minors = <>
+          Title.LabelFont.Orientation = 900
+          Title.LabelBrush.Style = bsClear
+        end      
+        item
+          Alignment = calBottom
+          Marks.LabelBrush.Style = bsClear
+          Minors = <>
+          Title.LabelBrush.Style = bsClear
+        end>
+      BackColor = clWhite
+      Foot.Brush.Color = clBtnFace
+      Foot.Font.Color = clBlue
+      Frame.Visible = False
+      Title.Brush.Color = clBtnFace
+      Title.Font.Color = clBlue
+      Title.Text.Strings = (
+        'TAChart'
+      )
+      OnAfterDraw = Chart1AfterDraw
+      Align = alClient
+      Color = clCream
+      object Chart1ConstantLine1: TConstantLine
+        Arrow.Visible = True
+        Pen.Width = 2
+      end
+      object Chart1ConstantLine2: TConstantLine
+        Arrow.Visible = True
+        LineStyle = lsVertical
+        Pen.Width = 2
+      end
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Height = 34
+    Top = 34
+    Width = 1002
+    Align = alTop
+    ClientHeight = 34
+    ClientWidth = 1002
+    TabOrder = 2
+    object Label2: TLabel
+      Left = 7
+      Height = 27
+      Top = 6
+      Width = 69
+      Align = alLeft
+      AutoSize = False
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 5
+      Caption = 'Xmin='
+      ParentColor = False
+    end
+    object Editxmin: TEdit
+      Left = 82
+      Height = 32
+      Top = 1
+      Width = 212
+      Align = alLeft
+      AutoSize = False
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
+      TabOrder = 0
+      Text = '-10'
+    end
+    object Label3: TLabel
+      Left = 300
+      Height = 27
+      Top = 6
+      Width = 69
+      Align = alLeft
+      AutoSize = False
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 5
+      Caption = 'Xmax='
+      ParentColor = False
+    end
+    object Editxmax: TEdit
+      Left = 375
+      Height = 32
+      Top = 1
+      Width = 212
+      Align = alLeft
+      AutoSize = False
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
+      TabOrder = 1
+      Text = '10'
+    end
+    object ButtonCalcInterval: TButton
+      Left = 593
+      Height = 32
+      Hint = 'Tente de trouver des limites convenables à la présentation du graphique'
+      Top = 1
+      Width = 200
+      Align = alLeft
+      BorderSpacing.Right = 6
+      Caption = 'Calculer Ymin,Ymax'
+      OnClick = ButtonCalcIntervalClick
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Height = 34
+    Top = 68
+    Width = 1002
+    Align = alTop
+    ClientHeight = 34
+    ClientWidth = 1002
+    TabOrder = 3
+    object Label4: TLabel
+      Left = 7
+      Height = 27
+      Top = 6
+      Width = 69
+      Align = alLeft
+      AutoSize = False
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 5
+      Caption = 'Ymin='
+      ParentColor = False
+    end
+    object Editymin: TEdit
+      Left = 82
+      Height = 32
+      Top = 1
+      Width = 212
+      Align = alLeft
+      AutoSize = False
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
+      TabOrder = 0
+      Text = '-10'
+    end
+    object Label5: TLabel
+      Left = 300
+      Height = 27
+      Top = 6
+      Width = 69
+      Align = alLeft
+      AutoSize = False
+      BorderSpacing.Left = 6
+      BorderSpacing.Top = 5
+      Caption = 'Ymax='
+      ParentColor = False
+    end
+    object EditYmax: TEdit
+      Left = 375
+      Height = 32
+      Top = 1
+      Width = 212
+      Align = alLeft
+      AutoSize = False
+      BorderSpacing.Left = 6
+      BorderSpacing.Right = 6
+      TabOrder = 1
+      Text = '10'
+    end
+    object ButtonGraph: TButton
+      Left = 593
+      Height = 32
+      Hint = 'Tracer la courbe et la visualiser dans les l''enveloppe précisée'
+      Top = 1
+      Width = 200
+      Align = alLeft
+      BorderSpacing.Right = 6
+      Caption = 'Tracer la courbe'
+      OnClick = ButtonGraphClick
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+    end
+    object ButtonGraph1: TButton
+      Left = 799
+      Height = 32
+      Hint = 'Enregistrer le graphique dans un fichier image'
+      Top = 1
+      Width = 194
+      Align = alLeft
+      BorderSpacing.Right = 6
+      Caption = 'Enregistrer'
+      OnClick = ButtonGraph1Click
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 810
+    Top = 30
+  end
+end
